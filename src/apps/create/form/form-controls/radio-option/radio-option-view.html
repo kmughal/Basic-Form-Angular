@@ -1,0 +1,8 @@
+<div class="form-group">
+    <label for="key">{{label}}</label>
+    <div ng-repeat="option in options">
+        <label>
+        <input type="radio" name="{{key}}" ng-model="formData[key]" value="{{option.value}}" /> {{option.label}}
+        </label>
+    </div>
+</div>

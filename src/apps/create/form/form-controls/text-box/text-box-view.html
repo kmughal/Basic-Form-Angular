@@ -1,0 +1,7 @@
+<div class="form-group">
+    <label>{{label}}</label>
+    <input type="text" class="form-control" ng-model="formData[key]" name="{{key}}" ng-required="required" />
+    <div ng-repeat="(index,message) in errorMessages">
+        <div class="error" ng-show="formName[key].$dirty && formName[key].$invalid && formName[key].$error[index]">{{message}}</div>
+    </div>
+</div>

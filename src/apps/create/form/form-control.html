@@ -1,0 +1,18 @@
+<form name="name" class="padding-all-20 margin-all-10" ng-init="formData = {}" novalidate>
+    <div ng-repeat="(key,field) in fields">
+        <div ng-if="field.type === 'text'">
+            <text-box form-name="name" form-data="formData" key="{{key}}" label="field.label" required="(field.required == true ? true : false)" error-messages="field.errorMessages">
+            </text-box>
+        </div>
+        <div ng-if="field.type ==='email'">
+            <email-box form-name="name" form-data="formData" key="{{key}}" label="field.label" required="field.required" error-messages="field.errorMessages"></email-box>
+        </div>
+        <div ng-if="field.type ==='radio'">
+            <radio-options form-name="name" form-data="formData" key="{{key}}" label="field.label" options="field.options" required="field.required"
+                error-messages="field.errorMessages"></radio-options>
+        </div>
+    </div>
+    <div>
+        <input type="submit" class="btn btn-success btn-lg pull-right" ng-disabled="name.$invalid" value="Create" ng-click="addUser($event,name,formData)" />
+    </div>
+</form>

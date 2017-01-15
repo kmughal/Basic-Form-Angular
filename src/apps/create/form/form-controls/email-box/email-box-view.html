@@ -1,0 +1,8 @@
+<div class="form-group">
+    <label for="key">{{label}}</label>
+    <input type="email" class="form-control" ng-model="formData[key]" name="{{key}}" required="required" />
+    <div class="error" ng-show="formName[key].$dirty && formName[key].$invalid">
+        <div ng-show="formName[key].$error.required">{{errorMessages["required"]}}</div>
+        <div ng-show="formName[key].$invalid">{{errorMessages["invalid"]}}</div>
+    </div>
+</div>
